@@ -1,0 +1,74 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.gpd-heading--dark-bg {
+	padding-top: 50px;
+	padding-right: 0px;
+	padding-bottom: 50px;
+	padding-left: 0px;
+	background-color: rgb(46, 49, 55);
+	text-align: center;
+	color: rgb(204, 204, 204);
+	font-family: Helvetica, serif;
+	font-weight: 100;
+}
+
+#iqd7e-2 {
+	text-transform: uppercase;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	font-weight: 100;
+	letter-spacing: 10px;
+	font-size: 1rem;
+	margin: 0 0 0 0;
+}
+
+#iep4y-2 {
+	text-transform: uppercase;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	letter-spacing: 5px;
+	color: rgb(220, 101, 155);
+	font-weight: 100;
+	margin: 0 0 10px 0;
+}
+
+#i7p3y-2 {
+	background-image: url('https://grapedrop.com/img/overlay.png'), url('https://grapedrop.com/img/plh6.jpg');
+	background-repeat: repeat, repeat;
+	background-position: left top, center center;
+	background-attachment: scroll, fixed;
+	background-size: auto, cover;
+}
+
+.footer2 {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 0.85rem;
+	font-weight: 200;
+	padding-top: 70px;
+	padding-bottom: 50px;
+	color: white;
+	background-color: #271d40;
+	padding: 70px 0 20% 0;
+}
+
+#iy5rm {
+	display: none;
+}
+
+#iwuwk {
+	display: none;
+}
+
+.button {
+	font-size: 17px;
+}

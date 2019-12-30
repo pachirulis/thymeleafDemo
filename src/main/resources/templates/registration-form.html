@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Register New User Form</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Reference Bootstrap files -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+		.error {color:red}
+
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link rel="stylesheet" th:href="@{/registration-form_files/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/registration-form_files/base.css}">
+    <link rel="stylesheet" th:href="@{/registration-form_files/registration-form-style.css}">
+</head>
+<body>
+<style>
+		            body {
+		                margin: 0;
+		                padding: 0;
+		                overflow-x: hidden;
+		            }
+
+</style>
+<section class="section-form4">
+    <div class="container" id="i6cf">
+        <div id="i59y">
+            <h1 id="iork">Register New User</h1>
+            <form th:action="@{/register/processRegistrationForm}"
+                  th:object="${crmUser}"
+                  class="form-horizontal" method="post" name="section-form" id="iflz">
+                <div data-columns="1" class="row no-gutters">
+                    <div data-column="1" class="cell">
+                        <div class="form-group-gut">
+                            <label class="label">Company Domain</label>
+                            <input type="text" th:field="*{userName}" placeholder="example: goodCompany.com" name="name"
+                                   th:errorclass="fieldError" required="" class="input">
+                            <label class="label">Password</label>
+                            <input type="password" th:field="*{password}" placeholder="password (*)"
+                                   th:errorclass="fieldError" name="name" required="" class="input">
+
+                            <label class="label">Confirm password</label>
+                            <input type="password" th:field="*{matchingPassword}" th:errorclass="fieldError"
+                                   placeholder="confirm password (*)" name="name" required="" class="input">
+
+                            <div th:if="${#fields.hasErrors('matchingPassword')}"
+                                 style="margin-bottom: 25px" class="text-danger">
+                                <ul>
+                                    <li th:each="err : ${#fields.errors('matchingPassword')}"
+                                        th:text="'Password ' + ${err}"/>
+                                </ul>
+                            </div>
+
+                            <label class="label">First Name</label>
+                            <input th:field="*{firstName}" type="text" placeholder="First Name (*)" name="name"
+                                   th:errorclass="fieldError" required="" class="input">
+
+
+                            <label class="label">Last Name</label>
+                            <input th:field="*{lastName}" type="text" placeholder="Last Name (*)" name="name"
+                                   th:errorclass="fieldError" required="" class="input">
+
+
+                            <label class="label">Email</label>
+                            <input th:field="*{email}" type="email" placeholder="Email (*)" th:errorclass="fieldError"
+                                   required="" name="email" class="input">
+
+
+                        </div>
+                        <div class="form-group" style="text-align: center; border: 0px solid">
+                            <button type="submit" class="button">Register</button>
+                            <a th:href="@{/showMyLoginPage}" class="button" role="button" style="color:white"
+                               aria-pressed="true">Go Back</a>
+                        </div>
+
+
+                        <div data-form-state="success" class="state-success" id="idovk" style="display: none;">Thanks!
+                            We received your request
+                        </div>
+                        <div data-form-state="error" class="state-error" id="icmqu" style="display: none;">An error
+                            occurred on processing your request, try again!
+                        </div>
+            </form>
+        </div>
+    </div>
+</section>
+<style>
+		    a.page-brand-badge {
+		        border-radius: 3px !important;
+		        background-color: white !important;
+		        box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1);
+		        padding: 5px 7px !important;
+		        font-family: Helvetica, sans-serif !important;
+		        font-size: 12px !important;
+		        text-decoration: none !important;
+		        color: #555 !important;
+		        transition: box-shadow 0.25s !important;
+		    }
+		    a.page-brand-badge:hover {
+		        box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.1);
+		    }
+		
+
+</style>
+<!--																	<script async="" src="@{/registration-form_files/bootstrap.bundle.min.js.descarga}"></script>-->
+<!--																	<script>-->
+<!--		    var formStateName = 'data-form-state';-->
+<!--		    var formStateEls = $('[' + formStateName + ']');-->
+<!--		    formStateEls.hide();-->
+<!--		    $('form').submit(function(e) {-->
+<!--		        e.preventDefault();-->
+<!--		        var form = $(this);-->
+<!--		        var action = (this.getAttribute('action') || '').trim();-->
+<!--		        var formData = new FormData(this);-->
+<!--		        var chkSelected = {};-->
+<!--		        var name = this.getAttribute('name');-->
+<!--		        name && formData.append('__name', name);-->
+<!--		-->
+<!--		        // Init checkbox and radio if still empty-->
+<!--		        form.find('[type=radio], [type=checkbox]').each(function(item) {-->
+<!--		            var chkName = this.name;-->
+<!--		            if (this.checked) {-->
+<!--		                chkSelected[chkName] = 1;-->
+<!--		                return;-->
+<!--		            }-->
+<!--		            chkSelected[chkName] = 0;-->
+<!--		        });-->
+<!--		-->
+<!--		        for (var chk in chkSelected) {-->
+<!--		            if (!chkSelected[chk]) {-->
+<!--		                formData.append(chk, '');-->
+<!--		            }-->
+<!--		        }-->
+<!--		-->
+<!--		        if (!action) {-->
+<!--		            action = "//grapedrop.com/form-collector/706edeedd63c41deb61bd93fd0d81db7";-->
+<!--		        }-->
+<!--		-->
+<!--		        $.ajax({-->
+<!--		            url: action,-->
+<!--		            method: 'POST',-->
+<!--		            processData: false,-->
+<!--		            contentType: false,-->
+<!--		            data: formData,-->
+<!--		        }).done(function(data) {-->
+<!--		            formStateEls.hide();-->
+<!--		            form.find('> *').fadeOut();-->
+<!--		            form.find('[' + formStateName + '=success]').stop(1).fadeIn();//.delay(3000).fadeOut();-->
+<!--		        }).fail(function(data) {-->
+<!--		            formStateEls.hide();-->
+<!--		            form.find('[' + formStateName + '=error]').stop(1).fadeIn().delay(3000).fadeOut();-->
+<!--		        });-->
+<!--		    });-->
+<!--		-->
+<!--		    </script>-->
+</body>
+</html>
