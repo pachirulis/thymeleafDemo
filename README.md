@@ -23,11 +23,11 @@ This project is educational, to practice and develop a web application using the
 #How to use it
 The program can be run in an IDE, or you could build a Jar file and deploy it in the cloud.
 
-Step 1 : Change application.properties in /resources with your DB URL and credentials./n
-Step 2 : Build the Jar file including all the dependancies./n
-Step 3 : Deploy it in the cloud for example in Cloud Foundry. How to> https://docs.cloudfoundry.org/buildpacks/java/getting-started-deploying-apps/gsg-spring.html /n
-Step 4 : Start your application and register. The default properties for every "company user" is Employee, so you could see the created emails but not create new ones or delete/update existing ones. To have the needed permissions you need to grant your user in the DB, Role 2 and Role 3 (Admin and Manager)./n
+Step 1 : Change application.properties in /resources with your DB URL and credentials.
+Step 2 : Build the Jar file including all the dependancies.
+Step 3 : Deploy it in the cloud for example in Cloud Foundry. How to> https://docs.cloudfoundry.org/buildpacks/java/getting-started-deploying-apps/gsg-spring.html 
+Step 4 : Start your application and register. The default properties for every "company user" is Employee, so you could see the created emails but not create new ones or delete/update existing ones. To have the needed permissions you need to grant your user in the DB, Role 2 and Role 3 (Admin and Manager).
 
-/n Thank you for reading.
+Thank you for reading.
 
-/n Best regards.
+Best regards.
