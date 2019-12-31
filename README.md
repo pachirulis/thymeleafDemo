@@ -2,7 +2,7 @@
 The mission of this project is solve the following problem:
 <br/>
 IT System Administrator of a company, has the task to create an email string and password for every new joiner.
-So this program is created to solve this problem, as it gives the possibility to auto-create the email string, strong password and store it in a database. 
+So this program is created to solve this problem, as it gives the possibility to auto-create the email string, strong password and store it in a database. If you would like it, message me to request the link of the app live demo.
 <br/>
 
 This project is educational, to practice and develop a web application using the following technologies :
