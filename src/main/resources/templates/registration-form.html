@@ -49,7 +49,7 @@
                     <div data-column="1" class="cell">
                         <div class="form-group-gut">
                             <label class="label">Company Domain</label>
-                            <input type="text" th:field="*{userName}" placeholder="example: goodCompany.com" name="name"
+                            <input pattern="[A-Za-z.]" type="text" th:field="*{userName}" placeholder="example: goodCompany.com" name="name"
                                    th:errorclass="fieldError" required="" class="input">
                             <label class="label">Password</label>
                             <input type="password" th:field="*{password}" placeholder="password (*)"
@@ -68,12 +68,12 @@
                             </div>
 
                             <label class="label">First Name</label>
-                            <input th:field="*{firstName}" type="text" placeholder="First Name (*)" name="name"
+                            <input pattern="[A-Za-z]" th:field="*{firstName}" type="text" placeholder="First Name (*)" name="name"
                                    th:errorclass="fieldError" required="" class="input">
 
 
                             <label class="label">Last Name</label>
-                            <input th:field="*{lastName}" type="text" placeholder="Last Name (*)" name="name"
+                            <input pattern="[A-Za-z]" th:field="*{lastName}" type="text" placeholder="Last Name (*)" name="name"
                                    th:errorclass="fieldError" required="" class="input">
 
 
@@ -118,56 +118,6 @@
 		
 
 </style>
-<!--																	<script async="" src="@{/registration-form_files/bootstrap.bundle.min.js.descarga}"></script>-->
-<!--																	<script>-->
-<!--		    var formStateName = 'data-form-state';-->
-<!--		    var formStateEls = $('[' + formStateName + ']');-->
-<!--		    formStateEls.hide();-->
-<!--		    $('form').submit(function(e) {-->
-<!--		        e.preventDefault();-->
-<!--		        var form = $(this);-->
-<!--		        var action = (this.getAttribute('action') || '').trim();-->
-<!--		        var formData = new FormData(this);-->
-<!--		        var chkSelected = {};-->
-<!--		        var name = this.getAttribute('name');-->
-<!--		        name && formData.append('__name', name);-->
-<!--		-->
-<!--		        // Init checkbox and radio if still empty-->
-<!--		        form.find('[type=radio], [type=checkbox]').each(function(item) {-->
-<!--		            var chkName = this.name;-->
-<!--		            if (this.checked) {-->
-<!--		                chkSelected[chkName] = 1;-->
-<!--		                return;-->
-<!--		            }-->
-<!--		            chkSelected[chkName] = 0;-->
-<!--		        });-->
-<!--		-->
-<!--		        for (var chk in chkSelected) {-->
-<!--		            if (!chkSelected[chk]) {-->
-<!--		                formData.append(chk, '');-->
-<!--		            }-->
-<!--		        }-->
-<!--		-->
-<!--		        if (!action) {-->
-<!--		            action = "//grapedrop.com/form-collector/706edeedd63c41deb61bd93fd0d81db7";-->
-<!--		        }-->
-<!--		-->
-<!--		        $.ajax({-->
-<!--		            url: action,-->
-<!--		            method: 'POST',-->
-<!--		            processData: false,-->
-<!--		            contentType: false,-->
-<!--		            data: formData,-->
-<!--		        }).done(function(data) {-->
-<!--		            formStateEls.hide();-->
-<!--		            form.find('> *').fadeOut();-->
-<!--		            form.find('[' + formStateName + '=success]').stop(1).fadeIn();//.delay(3000).fadeOut();-->
-<!--		        }).fail(function(data) {-->
-<!--		            formStateEls.hide();-->
-<!--		            form.find('[' + formStateName + '=error]').stop(1).fadeIn().delay(3000).fadeOut();-->
-<!--		        });-->
-<!--		    });-->
-<!--		-->
-<!--		    </script>-->
+
 </body>
 </html>
