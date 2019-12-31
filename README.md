@@ -6,30 +6,32 @@ So this program is created to solve this problem, as it gives the possibility to
 <br/>
 
 This project is educational, to practice and develop a web application using the following technologies :
+<br/><br/>
+
+•Java
+
+•Thymeleaf
+
+•Spring Boot
+
+•Spring Security
+
+•Spring JDBC
+
+•Spring JPA
+
+•Spring REST
+
+•Hibernate
+
+•MySQL
+
+•HTML and CSS
+
+•Eclipse and IntelliJ Idea
+
+•Postman
 <br/>
-•Java <br/>
-
-•Thymeleaf<br/>
-
-•Spring Boot<br/>
-
-•Spring Security<br/>
-
-•Spring JDBC<br/>
-
-•Spring JPA<br/>
-
-•Spring REST<br/>
-
-•Hibernate<br/>
-
-•MySQL<br/>
-
-•HTML and CSS<br/>
-
-•Eclipse and IntelliJ Idea<br/>
-
-•Postman<br/>
 
 <br/>
 #How to use it<br/>
