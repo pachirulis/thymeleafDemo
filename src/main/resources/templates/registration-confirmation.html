@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="images/favicon.ico">
+
 <head>
     <title>Registration Confirmation</title>
 </head>
 
-<body>
+<div style="height: 100vh;" class="jumbotron text-center">
+    <h1 class="display-3">Thank You!</h1>
+    <p class="lead"><strong>You are registered now</strong> you can proceed to login.</p>
+    <hr>
+    <p>
+        Having trouble? <a href="mailto:plpetkov@tutanota.com">Contact us</a>
+    </p>
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" th:href="@{/showMyLoginPage}" style="color:white" role="button">Go back to login page</a>
+    </p>
+</div>
 
-<h2>User registered successfully!</h2>
 
-<hr>
-
-<a th:href="@{/showMyLoginPage}">Login with new user</a>
-
-</body>
 
 </html>

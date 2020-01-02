@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.thymeleaf.org ">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="images/favicon.ico">
 
 <head>
@@ -9,11 +10,20 @@
 
 <body>
 
-<h2>Access Denied - You are not authorized to access this resource.</h2>
+<div style="height: 100vh;" class="jumbotron text-center">
+    <h1 class="display-3">Access Denied</h1>
+    <p class="lead"><strong>You are not authorized to access this resource.</strong></p>
+    <hr>
+    <p>
+        Having trouble? Need access? <a href="mailto:plpetkov@tutanota.com">Contact us</a>
+    </p>
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" th:href="@{/}" style="color:white" role="button">Go back to the home page</a>
+    </p>
+</div>
 
-<hr>
 
-<a th:href="@{/}">Back to Home Page</a>
+
 
 </body>
 

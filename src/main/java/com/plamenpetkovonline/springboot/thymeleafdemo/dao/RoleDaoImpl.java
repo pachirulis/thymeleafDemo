@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class RoleDaoImpl implements RoleDao {
@@ -33,5 +34,25 @@ public class RoleDaoImpl implements RoleDao {
         }
 
         return theRole;
+    }
+
+    @Override
+    public List<Role> findRoles() {
+        // get the current hibernate session
+        Session currentSession = entityManager.unwrap(Session.class);
+        // now retrieve/read from database using name
+        Query<Role> theQuery = currentSession.createQuery("from Role");
+
+
+
+        List<Role> theRoles = null;
+
+        try {
+            theRoles = theQuery.getResultList();
+        } catch (Exception e) {
+            theRoles = null;
+        }
+
+        return theRoles;
     }
 }

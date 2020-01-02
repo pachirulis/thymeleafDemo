@@ -2,12 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <!--	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -44,11 +42,11 @@
             <input type="hidden" th:field="*{password}"/>
             <div class="form-group">
                 <label for="frmg-xtkcgott38" id="iusux">First Name</label>
-                <input pattern="[A-Za-z]" th:field="*{name}" class="form-control" id="frmg-xtkcgott38">
+                <input pattern="[[a-zA-Z0-9]+]" th:field="*{name}" class="form-control" id="frmg-xtkcgott38">
             </div>
             <div class="form-group">
                 <label for="frmg-jczsrko50r">Surname</label>
-                <input pattern="[A-Za-z]" th:field="*{surname}" class="form-control" id="frmg-jczsrko50r">
+                <input pattern="[[a-zA-Z0-9]+]" th:field="*{surname}" class="form-control" id="frmg-jczsrko50r">
             </div>
             <div class="form-group">
                 <label>Department</label>
@@ -78,7 +76,7 @@
                 </div>
                 <form onclick="location.href = '/showMyLoginPage';" action="#" th:action="@{/logout}"
                       method="POST">
-                    <input type="submit" value="Logout" class="btn btn-outline-primary mt-2"/>
+                    <input type="submit" value="Logout" class="btn btn-primary mt-2"/>
                 </form>
                 <div data-form-state="success" id="iy5rm" class="state-success" style="display: none;">Thanks! We
                     received your request
@@ -110,58 +108,5 @@
 		
 
 </style>
-<!--													<script async="" th:src="@{/user-form_files/bootstrap.bundle.min.js.descarga}"></script>-->
-<!--													<script>function loadQl() {quicklink({ ignores:[ /^tel:/g, /^mailto:/g] })}</script>-->
-<!--													<script async="" th:src="@{/user-form_files/quicklink@1.0.1}" onload="loadQl()"></script>-->
-<!--													<script>-->
-<!--		    var formStateName = 'data-form-state';-->
-<!--		    var formStateEls = $('[' + formStateName + ']');-->
-<!--		    formStateEls.hide();-->
-<!--		    $('form').submit(function(e) {-->
-<!--		        e.preventDefault();-->
-<!--		        var form = $(this);-->
-<!--		        var action = (this.getAttribute('action') || '').trim();-->
-<!--		        var formData = new FormData(this);-->
-<!--		        var chkSelected = {};-->
-<!--		        var name = this.getAttribute('name');-->
-<!--		        name && formData.append('__name', name);-->
-
-<!--		        // Init checkbox and radio if still empty-->
-<!--		        form.find('[type=radio], [type=checkbox]').each(function(item) {-->
-<!--		            var chkName = this.name;-->
-<!--		            if (this.checked) {-->
-<!--		                chkSelected[chkName] = 1;-->
-<!--		                return;-->
-<!--		            }-->
-<!--		            chkSelected[chkName] = 0;-->
-<!--		        });-->
-
-<!--		        for (var chk in chkSelected) {-->
-<!--		            if (!chkSelected[chk]) {-->
-<!--		                formData.append(chk, '');-->
-<!--		            }-->
-<!--		        }-->
-
-<!--		        if (!action) {-->
-<!--		            action = "//grapedrop.com/form-collector/05d187ff7d594ccea2ca8fa4995e1693";-->
-<!--		        }-->
-
-<!--		        $.ajax({-->
-<!--		            url: action,-->
-<!--		            method: 'POST',-->
-<!--		            processData: false,-->
-<!--		            contentType: false,-->
-<!--		            data: formData,-->
-<!--		        }).done(function(data) {-->
-<!--		            formStateEls.hide();-->
-<!--		            form.find('> *').fadeOut();-->
-<!--		            form.find('[' + formStateName + '=success]').stop(1).fadeIn();//.delay(3000).fadeOut();-->
-<!--		        }).fail(function(data) {-->
-<!--		            formStateEls.hide();-->
-<!--		            form.find('[' + formStateName + '=error]').stop(1).fadeIn().delay(3000).fadeOut();-->
-<!--		        });-->
-<!--		    });-->
-
-<!--		    </script>-->
 </body>
 </html>
