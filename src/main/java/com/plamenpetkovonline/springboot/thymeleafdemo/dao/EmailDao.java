@@ -10,4 +10,6 @@ public interface EmailDao extends JpaRepository<Email, Integer> {
     // search by name
     List<Email> findByNameContainsOrSurnameContainsAllIgnoreCase(String name, String surname);
 
+    // search emails containing currentuser
+    List<Email> findByEmailContaining(String currentUser);
 }

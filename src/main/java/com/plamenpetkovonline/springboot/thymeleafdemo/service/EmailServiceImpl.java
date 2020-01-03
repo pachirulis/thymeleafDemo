@@ -70,11 +70,10 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public List<Email> findUsersContaining(String contains) {
-        List<Email> resultsList = null;
         String currentUsername;
+        List<Email> resultsList = null;
         try {
             if (contains != null && (contains.trim().length() > 0)) {
-
                 //get current user
                 Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
                 if (principal instanceof UserDetails) {
@@ -83,8 +82,9 @@ public class EmailServiceImpl implements EmailService {
                     currentUsername = principal.toString();
                 }
                 //now check if current user is  in contains
-                if (contains == currentUsername) {
-                    resultsList = employeeRepository.findAll().stream().filter(u -> u.getEmail().contains(currentUsername)).collect(Collectors.toList());
+                if (contains.toLowerCase() == currentUsername.toLowerCase()) {
+                    resultsList = employeeRepository.findAll().stream().filter(u -> u.getEmail().contains(currentUsername.toLowerCase())).collect(Collectors.toList());
+
 
                 }
             }
@@ -94,6 +94,21 @@ public class EmailServiceImpl implements EmailService {
         }
         return resultsList;
 
+    }
+
+    @Override
+    public List<Email> findByEmailContaining(String currentUser) {
+        String currentUsername;
+        //get current user
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            currentUsername = ((UserDetails) principal).getUsername();
+        } else {
+            currentUsername = principal.toString();
+        }
+        List<Email> results = employeeRepository.findByEmailContaining(currentUsername);
+
+        return results;
     }
 }
 

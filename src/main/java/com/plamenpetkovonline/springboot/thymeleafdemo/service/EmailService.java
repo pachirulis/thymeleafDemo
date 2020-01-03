@@ -18,4 +18,6 @@ public interface EmailService {
 
     List<Email> findUsersContaining(String contains);
 
+    List<Email> findByEmailContaining(String currentUser);
+
 }

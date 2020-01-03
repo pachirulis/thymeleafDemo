@@ -38,7 +38,8 @@ public class EmailController {
         // get employees from db
         List<Email> theEmployees;
         try {
-            theEmployees = employeeService.findUsersContaining(currentUser);
+            System.out.println(currentUser);
+            theEmployees = employeeService.findByEmailContaining(currentUser);
             // add to the spring model
 
             theModel.addAttribute("employees", theEmployees);
@@ -46,6 +47,7 @@ public class EmailController {
             System.out.println("error enn el controoller");
             e.printStackTrace();
         }
+
         return "users/list-employees";
     }
 
