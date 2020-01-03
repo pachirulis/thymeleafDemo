@@ -40,9 +40,9 @@ public class RoleDaoImpl implements RoleDao {
     public List<Role> findRoles() {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
-        // now retrieve/read from database using name
-        Query<Role> theQuery = currentSession.createQuery("from Role");
 
+        // now retrieve/read from database using from table
+        Query<Role> theQuery = currentSession.createQuery("from Role");
 
 
         List<Role> theRoles = null;

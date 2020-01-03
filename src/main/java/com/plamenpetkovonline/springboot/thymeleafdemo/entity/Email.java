@@ -4,6 +4,7 @@ package com.plamenpetkovonline.springboot.thymeleafdemo.entity;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "employee")
@@ -18,9 +19,11 @@ public class Email {
     private int id;
 
     @Column(name = "name")
+    @Pattern(regexp = "\\w.*")
     private String name;
 
     @Column(name = "surname")
+    @Pattern(regexp = "\\w.*")
     private String surname;
 
     @Column(name = "password")

@@ -4,6 +4,7 @@ import com.plamenpetkovonline.springboot.thymeleafdemo.validation.FieldMatch;
 import com.plamenpetkovonline.springboot.thymeleafdemo.validation.ValidEmail;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @FieldMatch.List({
@@ -12,6 +13,7 @@ import javax.validation.constraints.Size;
 public class CrmUser {
 
     @NotNull(message = "is required")
+    @Pattern(regexp = "\\w.*")
     @Size(min = 1, message = "is required")
     private String userName;
 
@@ -24,10 +26,12 @@ public class CrmUser {
     private String matchingPassword;
 
     @NotNull(message = "is required")
+    @Pattern(regexp = "\\w.*")
     @Size(min = 1, message = "is required")
     private String firstName;
 
     @NotNull(message = "is required")
+    @Pattern(regexp = "\\w.*")
     @Size(min = 1, message = "is required")
     private String lastName;
 
