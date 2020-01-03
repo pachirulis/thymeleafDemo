@@ -49,7 +49,8 @@
                     <div data-column="1" class="cell">
                         <div class="form-group-gut">
                             <label class="label">Company Domain</label>
-                            <input pattern="[a-z0-9.-]+\.[a-z]{2,}$" type="text" th:field="*{userName}" placeholder="example: goodCompany.com" name="name"
+                            <input pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" type="text" th:field="*{userName}"
+                                   placeholder="example: goodCompany.com" name="name"
                                    th:errorclass="fieldError" required="" class="input">
                             <label class="label">Password</label>
                             <input type="password" th:field="*{password}" placeholder="password (*)"
