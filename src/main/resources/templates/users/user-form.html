@@ -1,114 +1,115 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport">
+    <link rel="stylesheet" th:href="@{/user-form_files/base.css}">
+    <link rel="stylesheet" th:href="@{/user-form_files/user-form-style.css}">
+    <link rel="stylesheet" th:href="@{/styles/user-form-style.css}">
+    <style>
+	           a.page-brand-badge {
+	               border-radius: 3px !important;
+	               background-color: white !important;
+	               box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1);
+	               padding: 5px 7px !important;
+	               font-family: Helvetica, sans-serif !important;
+	               font-size: 12px !important;
+	               text-decoration: none !important;
+	               color: #555 !important;
+	               transition: box-shadow 0.25s !important;
+	           }
+	           a.page-brand-badge:hover {
+	               box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.1);
+	           }
 
-    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        <link rel="stylesheet" th:href="@{/user-form_files/base.css}">
-        <link rel="stylesheet" th:href="@{/user-form_files/user-form-style.css}">
-        <link rel="stylesheet" th:href="@{/styles/user-form-style.css}">
 
-    </head>
+    </style>
+</head>
 <body>
 <style>
-		            body {
-		                margin: 0;
-		                padding: 0;
-		                overflow-x: hidden;
-		            }
+	                   body {
+	                       margin: 0;
+	                       padding: 0;
+	                       overflow-x: hidden;
+	                   }
 
 </style>
-<section id="i7p3y-2" class="gpd-heading--dark-bg">
-    <div id="i7lj" class="gpd-container">
+<section class="gpd-heading--dark-bg" id="i7p3y-2">
+    <div class="gpd-container" id="i7lj">
         <h1 id="iep4y-2">Employee Directory</h1>
         <h2 id="iqd7e-2">Email generator</h2>
     </div>
 </section>
-<section id="ijnm" class="gpd-section">
-    <div id="iuo1" class="gpd-container">
+<section class="gpd-section" id="ijnm">
+    <div class="gpd-container" id="iuo1">
         <h1 id="icysc">User Directory</h1>
-        <form action="#" th:action="@{/users/save}" th:object="${user}" method="POST" class="bs4-form">
-            <input type="hidden" th:field="*{id}"/>
-            <input type="hidden" th:field="*{email}"/>
-            <input type="hidden" th:field="*{password}"/>
+        <form action="#" class="bs4-form" method="post" th:action="@{/users/save}" th:object="${user}">
+            <input th:field="*{id}" type="hidden"> <input th:field="*{email}" type="hidden"> <input
+                th:field="*{password}" type="hidden">
             <div class="form-group">
-                <label for="frmg-xtkcgott38" id="iusux">First Name</label>
-                <input pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="Latin letters name, no spaces"
-                       th:field="*{name}"
-                       class="form-control" id="frmg-xtkcgott38">
+                <label for="frmg-xtkcgott38" id="iusux">First Name</label> <input class="form-control"
+                                                                                  id="frmg-xtkcgott38"
+                                                                                  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"
+                                                                                  th:field="*{name}"
+                                                                                  title="Latin letters name, no spaces">
             </div>
             <div class="form-group">
-                <label for="frmg-jczsrko50r">Surname</label>
-                <input pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="Latin letters surname, no spaces"
-                       th:field="*{surname}"
-                       class="form-control" id="frmg-jczsrko50r">
+                <label for="frmg-jczsrko50r">Surname</label> <input class="form-control" id="frmg-jczsrko50r"
+                                                                    pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"
+                                                                    th:field="*{surname}"
+                                                                    title="Latin letters surname, no spaces">
             </div>
             <div class="form-group">
-                <label>Department</label>
-                <select class="form-control" th:field="*{department}">
-                    <option th:value="'sales'" th:text="Sales"></option>
-                    <option th:value="'development'" th:text="Development"></option>
-                    <option th:value="'accounting'" th:text="Accounting"></option>
-                    <option th:value="'other'" th:text="Other"></option>
-
-                </select>
+                <label>Department</label> <select class="form-control" th:field="*{department}">
+                <option th:text="Sales" th:value="'sales'">
+                </option>
+                <option th:text="Development" th:value="'development'">
+                </option>
+                <option th:text="Accounting" th:value="'accounting'">
+                </option>
+                <option th:text="Other" th:value="'other'">
+                </option>
+            </select>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Save</button>
-
+                <button class="btn btn-primary" type="submit">Save</button>
             </div>
         </form>
-        <div><a th:href="@{/users/list}" class="btn btn-primary" role="button" style="color:white" aria-pressed="true">Go
-            Back</a></div>
+        <div>
+            <a aria-pressed="true" class="btn btn-primary" role="button" style="color:white" th:href="@{/users/list}">Go
+                Back</a>
+        </div>
     </div>
 </section>
-<footer style="padding:70px 0 20% 0;" class="footer2">
+<footer class="footer2" style="padding:70px 0 20% 0;">
     <div class="container">
-        <div data-columns="1" class="row no-gutters">
-            <div data-column="1" id="i5xdr" class="cell">
-                <div class="footer-details">If you experience any issues or need to change your access please contact
-                    your administrator
+        <div class="row no-gutters" data-columns="1">
+            <div class="cell" data-column="1" id="i5xdr">
+                <div class="footer-details">
+                    If you experience any issues or need to change your access please contact your administrator
                 </div>
-                <form onclick="location.href = '/showMyLoginPage';" action="#" th:action="@{/logout}"
-                      method="POST">
-                    <input type="submit" value="Logout" class="btn btn-primary mt-2"/>
+                <form action="#" method="post" onclick="location.href = '/showMyLoginPage';" th:action="@{/logout}">
+                    <input class="btn btn-primary mt-2" type="submit" value="Logout">
                 </form>
-                <div data-form-state="success" id="iy5rm" class="state-success" style="display: none;">Thanks! We
-                    received your request
+                <div class="state-success" data-form-state="success" id="iy5rm" style="display: none;">
+                    Thanks! We received your request
                 </div>
-                <div data-form-state="error" id="iwuwk" class="state-error" style="display: none;">An error occurred on
-                    processing your request, try again!
+                <div class="state-error" data-form-state="error" id="iwuwk" style="display: none;">
+                    An error occurred on processing your request, try again!
                 </div>
-
             </div>
         </div>
-        <div class="footer-copyright">© 2019 Plamen Petkov. All Rights Reserved</div>
+        <div class="footer-copyright">
+            © 2019 Plamen Petkov. All Rights Reserved
+        </div>
     </div>
 </footer>
-<style>
-		    a.page-brand-badge {
-		        border-radius: 3px !important;
-		        background-color: white !important;
-		        box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1);
-		        padding: 5px 7px !important;
-		        font-family: Helvetica, sans-serif !important;
-		        font-size: 12px !important;
-		        text-decoration: none !important;
-		        color: #555 !important;
-		        transition: box-shadow 0.25s !important;
-		    }
-		    a.page-brand-badge:hover {
-		        box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.1);
-		    }
-		
 
-</style>
 </body>
 </html>
